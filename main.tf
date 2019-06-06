@@ -80,7 +80,7 @@ resource "kubernetes_deployment" "cloudsql_proxy" {
           name = "cloudsql-credentials"
 
           secret {
-            secret_name = "kube_cloudsql_credentials"
+            secret_name = "${var.kube_cloudsql_credentials}"
           }
         }
 
