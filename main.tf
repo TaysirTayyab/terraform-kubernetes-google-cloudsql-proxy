@@ -27,7 +27,9 @@ resource "kubernetes_deployment" "cloudsql_proxy" {
     replicas = 2
 
     selector {
-      app = "${var.proxy_deployment_name}"
+      match_labels {
+        app = "${var.proxy_deployment_name}"
+      }
     }
 
     template {
