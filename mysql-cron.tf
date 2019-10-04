@@ -1,5 +1,5 @@
 resource "kubernetes_cron_job" "probe-mysql" {
-  count = "${var.include_test ? 1 : 0}"
+  count = "${var.include_sql_test ? 1 : 0}"
   metadata {
     name = "probe-mysql-${var.kube_namespace}"
     namespace = "${var.kube_namespace}"
@@ -18,9 +18,27 @@ resource "kubernetes_cron_job" "probe-mysql" {
           metadata {}
           spec {
             container {
+              volume_mount {
+                name       = "mysql-credentials"
+                mount_path = "/mysql-credentials"
+              }
               name    = "mysql"
               image   = "mysql"
-              command = ["/bin/sh", "-c", "mysql -h ${var.proxy_service_name}  -u ${var.db_user} -p${var.db_passwd} -e 'SELECT COUNT(*) FROM information_schema.SCHEMATA'"]
+
+              command =  ["mysql"]
+              args    =  [
+                "--defaults-extra-file=/mysql-credentials/client.cnf",
+                "-h${var.proxy_service_name}",
+                "-u${var.cloudsql_user}",
+                "-e SELECT COUNT(*) FROM information_schema.SCHEMATA"
+              ]
+            }
+            volume {
+              name = "mysql-credentials"
+
+              secret {
+                secret_name = "mysql-credentials"
+              }
             }
             restart_policy = "Never"
           }
