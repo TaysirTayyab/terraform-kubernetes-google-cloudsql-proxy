@@ -10,15 +10,19 @@ The proxy connects to the CloudSQL instance over SSL using an oauth service acco
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cloudsql_instance_id | The id of the CloudSQL instance. | string | - | yes |
-| cloudsql_instance_project | The id of the GCP project where the instance is configured. | string | - | yes |
-| cloudsql_instance_region | The GCP region where the CloudSQL instance is deployed. | string | - | yes |
-| kube_cloudsql_credentials | The kubernetes secret in namespace that holds the cloudsql credentials. | string | - | yes |
-| kube_cloudsql_credentials_key | The key in the secret for the credentials file. | string | - | yes |
-| kube_namespace | The kubernetes namespace to deploy the proxy. | string | - | yes |
-| pod_replicas | The number of replicas of the proxy to run. | number | `2` | no |
-| proxy_deployment_name | The name to give to the proxy deployment. | string | `cloudsql-proxy` | no |
-| proxy_service_name | The name to give to the proxy's service, which is used by containers to connect to the proxy. | string | `cloudsql-proxy` | no |
+| cloudsql\_instance\_id | The id of the CloudSQL instance. | string | n/a | yes |
+| cloudsql\_instance\_project | The id of the GCP project where the instance is configured. | string | n/a | yes |
+| cloudsql\_instance\_region | The GCP region where the CloudSQL instance is deployed. | string | n/a | yes |
+| cloudsql\_passwd | The password for the user for the tests. | string | n/a | yes |
+| cloudsql\_user | The user to login with for the sql tests. | string | n/a | yes |
+| include\_sql\_test | True to include test, otherwise set to false or null. | string | n/a | yes |
+| kube\_cloudsql\_credentials | The kubernetes secret in namespace that holds the cloudsql credentials. | string | n/a | yes |
+| kube\_cloudsql\_credentials\_key | The key in the secret for the credentials file. | string | n/a | yes |
+| kube\_namespace | The kubernetes namespace to deploy the proxy. | string | n/a | yes |
+| pod\_replicas | The number of replicas of the proxy to run. | string | `"2"` | no |
+| proxy\_deployment\_name | The name to give to the proxy deployment. | string | `"cloudsql-proxy"` | no |
+| proxy\_service\_name | The name to give to the proxy's service, which is used by containers to connect to the proxy. | string | `"cloudsql-proxy"` | no |
+
 
 ## Outputs
 
