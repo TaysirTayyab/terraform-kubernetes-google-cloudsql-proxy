@@ -1,3 +1,16 @@
+
+variable "cloudsql_user" {
+  type        = "string"
+  description = "The user to login with for the sql tests."
+}
+variable "cloudsql_passwd" {
+  type        = "string"
+  description = "The password for the user for the tests."
+}
+variable "include_sql_test" {
+  type        = "string"
+  description = "True to include test, otherwise set to false or null."
+}
 variable "kube_namespace" {
   type        = "string"
   description = "The kubernetes namespace to deploy the proxy."

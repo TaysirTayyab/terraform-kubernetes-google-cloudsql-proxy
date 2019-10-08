@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Unreleased Minor Version v1.2.0
+* Added support for a mysql connectivity test cron job
+* Added variable cloudsql_user to specify a user to test the cloud sql instance connectivity.
+* Added variable cloudsql_passwd to specify the user's password.
+* Added variable include_sql_test to enable or disable the tests. Enabled by default.
+  
 ## v1.1.0
 
 * **BREAKING** added support for terraform kubernetes provider v1.8.0
