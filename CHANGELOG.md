@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.2.1
+* Save job history for better metrics visualization 
+
 ## v1.2.0
 * Added support for a mysql connectivity test cron job
 * Added variable cloudsql_user to specify a user to test the cloud sql instance connectivity.
