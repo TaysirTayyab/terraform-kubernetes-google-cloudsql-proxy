@@ -7,7 +7,6 @@ resource "kubernetes_cron_job" "probe-mysql" {
   spec {
     concurrency_policy            = "Forbid"
     failed_jobs_history_limit     = 3
-    backoff_limit                 = 1
     schedule                      = "*/5 * * * *"
     starting_deadline_seconds     = 10
     successful_jobs_history_limit = 0
