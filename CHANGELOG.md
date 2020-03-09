@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.2.2
+* Update CloudSQL proxy version to 1.16
+
 ## v1.2.1
 * Save job history for better metrics visualization 
 

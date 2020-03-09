@@ -41,7 +41,7 @@ resource "kubernetes_deployment" "cloudsql_proxy" {
 
       spec {
         container {
-          image = "gcr.io/cloudsql-docker/gce-proxy:1.12"
+          image = "gcr.io/cloudsql-docker/gce-proxy:1.16"
           name  = "${var.proxy_deployment_name}"
 
           command = [
