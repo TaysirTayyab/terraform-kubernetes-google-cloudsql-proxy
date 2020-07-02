@@ -5,7 +5,7 @@ resource "kubernetes_secret" "mysql_credentials" {
   }
 
   data {
-    "client.cnf" = "[client] \npassword=${var.cloudsql_passwd}"
+    "client.cnf" = "[client] \npassword=\"${var.cloudsql_passwd}\""
   }
 
   type = "kubernetes.io/opaque"
