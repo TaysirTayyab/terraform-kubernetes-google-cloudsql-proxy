@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.4
+
+* whitespace cleanup
+
 ## v1.2.3
 * [SAASOPS-676](https://jira.broadsoft.com/browse/SAASOPS-676) fixed a bug to properly escape passwords when writing to my.cnf file in test container
 

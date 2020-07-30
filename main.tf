@@ -60,18 +60,15 @@ resource "kubernetes_deployment" "cloudsql_proxy" {
           port {
             container_port = 3306
           }
-
           volume_mount {
             name       = "cloudsql-credentials"
             mount_path = "/secrets/cloudsql"
             read_only  = true
           }
-
           volume_mount {
             name       = "ssl-certs"
             mount_path = "/etc/ssl/certs"
           }
-
           volume_mount {
             name       = "cloudsql"
             mount_path = "/cloudsql"
