@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.0.0
+
+* [SAASOPS-722](https://jira.broadsoft.com/browse/SAASOPS-722) added variable `kube_cloudsql_credentials_unique_id`
+
 ## v1.2.4
 
 * whitespace cleanup
