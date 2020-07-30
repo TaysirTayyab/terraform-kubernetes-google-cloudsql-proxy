@@ -51,6 +51,11 @@ resource "kubernetes_deployment" "cloudsql_proxy" {
             "-credential_file=/secrets/cloudsql/${var.kube_cloudsql_credentials_key}",
           ]
 
+          env {
+            name  = "CLOUDSQL_SERVICE_ACCOUNT_KEY_UNIQUE_ID"
+            value = "${var.kube_cloudsql_credentials_unique_id}"
+          }
+
           # requires api_verison = rbac.authorization.k8s.io/v1
           # security_context {
           #   run_as_user                = 2     # non-root user

@@ -28,6 +28,15 @@ variable "kube_cloudsql_credentials_key" {
   description = "The key in the secret for the credentials file."
 }
 
+variable "kube_cloudsql_credentials_unique_id" {
+  type = "string"
+
+  description = <<EOF
+Unique identifier for the cloudsql service account key. Used to trigger proxy
+restart when the key identifier changes.
+EOF
+}
+
 variable "pod_replicas" {
   type        = "string"
   default     = 2
