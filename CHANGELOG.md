@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.2.3
+* [SAASOPS-676](https://jira.broadsoft.com/browse/SAASOPS-676) fixed a bug to properly escape passwords when writing to my.cnf file in test container
+
 ## v1.2.2
 * Update CloudSQL proxy version to 1.16
 
