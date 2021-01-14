@@ -4,7 +4,7 @@ resource "kubernetes_secret" "mysql_credentials" {
     namespace = "${var.kube_namespace}"
   }
 
-  data {
+  data = {
     "client.cnf" = "[client] \npassword=\"${var.cloudsql_passwd}\""
   }
 
